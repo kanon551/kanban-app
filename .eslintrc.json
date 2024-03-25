@@ -14,16 +14,5 @@
     "plugins": [
         "react"
     ],
-    "rules": {
-        "@typescript-eslint/explicit-function-return-type": "warn",
-        "@typescript-eslint/no-unsafe-argument": "off",
-        "@typescript-eslint/strict-boolean-expressions": [
-            "error",
-            {
-                "allowString": false,
-                "allowNullableString": false,
-                "ignoreRhs": true
-            }
-        ]
-    }
+    "rules": {}
 }

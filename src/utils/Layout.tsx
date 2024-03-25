@@ -6,7 +6,7 @@ import Box from '@mui/joy/Box'
 import Sidebar from '../components/Sidebar'
 import Header from '../components/Header'
 import { type Props, type RoutingProps } from '../global/GlobalTypes'
-
+import { useTheme } from '@mui/material/styles'
 // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
 
 const routingsConfig: RoutingProps[] = [
@@ -42,37 +42,38 @@ const routingsConfig: RoutingProps[] = [
 
 const Layout = (props: Props) => {
   const { children } = props
+  const theme = useTheme()
 
   return (
-        <CssVarsProvider disableTransitionOnChange>
-          <CssBaseline />
-          <Box sx={{ display: 'flex', minHeight: '100dvh' }}>
-            <Sidebar config={routingsConfig} />
-            <Header />
-            <Box
-              component="main"
-              className="MainContent"
-              sx={{
-                pt: { xs: 'calc(12px + var(--Header-height))', md: 3 },
-                pb: { xs: 2, sm: 2, md: 3 },
-                flex: 1,
-                display: 'flex',
-                flexDirection: 'column',
-                minWidth: 0,
-                height: '100dvh',
-                gap: 1,
-                overflow: 'auto'
-              }}
-            >
-              <Box sx={{ flex: 1, width: '100%', background: '#F8F8FF', padding: '80px 40px 40px 40px' }}>
-              {
+    <CssVarsProvider disableTransitionOnChange>
+      <CssBaseline />
+      <Box sx={{ display: 'flex', minHeight: '100dvh' }}>
+        <Sidebar config={routingsConfig} />
+        <Header />
+        <Box
+          component="main"
+          className="MainContent"
+          sx={{
+            pt: { xs: 'calc(12px + var(--Header-height))', md: 3 },
+            pb: { xs: 2, sm: 2, md: 3 },
+            flex: 1,
+            display: 'flex',
+            flexDirection: 'column',
+            minWidth: 0,
+            height: '100dvh',
+            gap: 1,
+            overflow: 'auto'
+          }}
+        >
+          <Box sx={{ flex: 1, width: '100%', background: theme.saral.mainScreenbackgroundColor, padding: theme.saral.mainScreenPadding }}>
+            {
               children
             }
-              </Box>
-
-            </Box>
           </Box>
-        </CssVarsProvider>
+
+        </Box>
+      </Box>
+    </CssVarsProvider>
   )
 }
 

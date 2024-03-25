@@ -6,12 +6,12 @@ import Typography from '@mui/joy/Typography'
 import { styled } from '@mui/material/styles'
 import Board from '../components/Kanban/Board'
 
-export const KanbanContainer = styled('div')({
+export const KanbanContainer = styled('div')(({ theme }) => ({
   height: '70vh',
   width: '100%',
-  backgroundColor: '#F8F8FF',
-  color: '#FFFFFF'
-})
+  backgroundColor: theme.saral.mainScreenbackgroundColor,
+  color: theme.saral.cleanWhite
+}))
 
 const Tasks = () => {
   return (

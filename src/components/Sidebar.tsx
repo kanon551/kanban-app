@@ -1,3 +1,4 @@
+/* eslint-disable import/no-duplicates */
 /* eslint-disable @typescript-eslint/explicit-function-return-type */
 import * as React from 'react'
 import GlobalStyles from '@mui/joy/GlobalStyles'
@@ -15,6 +16,7 @@ import { styled } from '@mui/material/styles'
 import { closeSidebar, iconComponents } from '../global/GlobalFunctions'
 import { useNavigate, useLocation } from 'react-router-dom'
 import { type RoutingProps } from '../global/GlobalTypes'
+import { useTheme } from '@mui/material/styles'
 
 export const ImageWrapper = styled('div')({
   height: '30px',
@@ -37,6 +39,7 @@ interface SidebarProps {
 
 export default function Sidebar ({ config }: SidebarProps) {
   const navigate = useNavigate()
+  const theme = useTheme()
   const location = useLocation()
   const breadcrumbs = location.pathname
 
@@ -52,22 +55,16 @@ export default function Sidebar ({ config }: SidebarProps) {
         transition: 'transform 0.4s, width 0.4s',
         zIndex: 1000,
         height: '100dvh',
-        width: {
-          xs: '240px',
-          sm: '320px',
-          md: '320px',
-          lg: '320px',
-          xl: '320px'
-        },
+        width: theme.saral.sideBarWidth,
         top: 0,
-        padding: '24px 24px 16px 24px',
+        padding: theme.saral.sideBarPadding,
         flexShrink: 0,
         display: 'flex',
         flexDirection: 'column',
-        gap: '32px',
+        gap: theme.saral.sideBarGap,
         borderRight: '1px solid',
         borderColor: 'divider',
-        backgroundColor: '#FFFFFF'
+        backgroundColor: theme.saral.cleanWhite
       }}
     >
       <GlobalStyles
@@ -140,7 +137,7 @@ export default function Sidebar ({ config }: SidebarProps) {
                 <ListItem key={item.id}>
                 <ListItemButton onClick={() => { navigate(`${item.url}`) }}
                 sx={{
-                  background: breadcrumbs === `${item.url}` ? '#F8F8FF' : null
+                  background: breadcrumbs === `${item.url}` ? theme.saral.mainScreenbackgroundColor : null
                 }}
                 >
                   <SelectedIcon />

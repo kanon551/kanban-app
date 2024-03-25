@@ -14,9 +14,9 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <ErrorBoundary FallbackComponent={ErrorFallback}>
-        <StyledEngineProvider injectFirst>
-          <App />
-        </StyledEngineProvider>
+      <StyledEngineProvider injectFirst>
+        <App />
+      </StyledEngineProvider>
     </ErrorBoundary>
   </React.StrictMode>
 )

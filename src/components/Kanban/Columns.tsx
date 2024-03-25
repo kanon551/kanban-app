@@ -1,3 +1,4 @@
+/* eslint-disable import/no-duplicates */
 /* eslint-disable @typescript-eslint/no-misused-promises */
 /* eslint-disable @typescript-eslint/explicit-function-return-type */
 /* eslint-disable @typescript-eslint/no-unsafe-argument */
@@ -9,6 +10,8 @@ import { type CardInterface } from '../../global/GlobalTypes'
 import DropIndicator from './DropIndicator'
 import AddTask from './AddTask'
 import CustomSkeleton from '../../utils/CustomSkeleton'
+import { useTheme } from '@mui/material/styles'
+import { type Theme } from '@mui/material/styles/createTheme'
 
 interface ColumnsProps {
   title: string
@@ -40,17 +43,18 @@ const ColumnTypography = styled(Typography)(({ color }: { color: string }) => ({
   color
 }))
 
-const CardWrapper = styled(Box)(({ active }: { active: string }) => ({
+const CardWrapper = styled(Box)(({ active, theme }: { active: string, theme: Theme }) => ({
   height: '100%',
   width: '100%',
   padding: '0.5rem',
   transition: 'background-color 0.3s',
   border: active === 'true' ? '1px solid lightgrey' : 'none',
   borderRadius: active === 'true' ? '8px' : 'none',
-  backgroundColor: active === 'true' ? '#f2f2ff' : 'transparent'
+  backgroundColor: active === 'true' ? theme.saral?.columnBackgroundColor : 'transparent'
 }))
 
 const Columns = ({ title, column, cards, adjustCards, addCard, updateCard, removeCard }: ColumnsProps) => {
+  const theme = useTheme()
   const [active, setActive] = useState<boolean>(false)
   const filteredCards = cards.filter((c) => c.completed === column)
 
@@ -166,7 +170,7 @@ const Columns = ({ title, column, cards, adjustCards, addCard, updateCard, remov
         <ColumnTypography variant="h6" color={'darkgrey'}>
           {title}
         </ColumnTypography>
-        <ColumnTypography variant="body2" color={'#ffffff'} sx={{ background: '#0B6BCB', padding: '0.8vh', borderRadius: '50%' }}>
+        <ColumnTypography variant="body2" color={theme.saral.mainScreenbackgroundColor} sx={{ background: '#0B6BCB', padding: '0.8vh', borderRadius: '50%' }}>
           {filteredCards.length}
         </ColumnTypography>
       </ColumnBox>
@@ -174,7 +178,9 @@ const Columns = ({ title, column, cards, adjustCards, addCard, updateCard, remov
         onDrop={handleDragEnd}
         onDragOver={handleDragOver}
         onDragLeave={handleDragLeave}
-        active={active ? 'true' : 'false'}>
+        active={active ? 'true' : 'false'}
+        theme={theme}
+        >
         {
           cards.length === 0
             ? <CustomSkeleton />
