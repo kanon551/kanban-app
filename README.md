@@ -1,46 +1,103 @@
-# Getting Started with Create React App
+# Project for SARAL’s Frontend Engineer
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+---
 
-## Available Scripts
+Hey there! 👋 
 
-In the project directory, you can run:
+Thanks for your interest in working with us! The final step in our hiring process is a virtual code interview.  Please send us 1 video link, answering the questions and explaining your code structure.
 
-### `npm start`
+**Somethings to keep in mind:**
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- Please be sure your audio is clear and your camera is on when you answer the questions. You will need to create a second video that records your screen for the code share.
+- Contact us if you have issues with the assignment.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+# Tech Stack 
+- React
+- Typescript
+- Material-Ui
+- Framer Motion
+- Kanban Application
+- React-error-boundaries
+- Axios
 
-### `npm test`
+# The Assignment
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+You have to create a task management system when you can create a todo, edit a todo, delete a todo and mark a todo as complete.
 
-### `npm run build`
+Below are some public apis you have to use, more details in docs here [`https://dummyjson.com/docs/todos`](https://dummyjson.com/docs/todos)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+// Get all todos for a user
+POST : GET
+URL : https://dummyjson.com/todos/user/<user id>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+// Add a todo
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+URL : https://dummyjson.com/todos/add
+Method : POST
+Body : 
+{
+		todo: 'Use DummyJSON in the project',
+		completed: false,
+		userId: 5
+}
 
-### `npm run eject`
+// Edit a todo / Mark a todo as complete
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+URL : https://dummyjson.com/todos/<todo id>
+Method : PUT
+Body :
+{
+		completed: false,
+}
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+// Delete Todo
+URL : https://dummyjson.com/todos/<todo id>
+Method : DELETE
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Use this [**figma design file**](https://www.figma.com/file/6qJ3qC3mhk8VZd1vJVAEgy/Clean-Kanban-Todo-(Community)?type=design&node-id=0-1&mode=design&t=6O9DI1ZK7so7rrQW-0) for reference and make it as pixel perfect as you can. 
 
-## Learn More
+## Expectations
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- We expect you to make the functional part i.e. todo using the api and other sidebar and is just to test your ui skill.
+- On API level, user will only be able to add todo name and mark it as complete. User can drag and drop the cards from one column to the next.
+- Your kanban board will only have 2 columns i.e. incomplete and complete.
+- We expect simple and well written components, always using the hooks from React.
+- Your components should receive props that should be typed with typescript.
+- If we change the theme, your components should respect it.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Questions
+
+We expect you to go in-depth on at the following questions:
+
+1. How will you organize the interface components and name them.
+2. How would you organize your components in a scalable application architecture providing support to create components variants, and reuse them in a simple and elegant pattern?
+3. Which library will you use to for the kanban board? Explain your choice.
+
+Send us a loom video covering these things once you’re done with the project.
+
+## Development Instructions
+
+1. Once you have [opened the link](https://www.figma.com/file/6qJ3qC3mhk8VZd1vJVAEgy/Clean-Kanban-Todo-(Community)?type=design&node-id=0-1&mode=design&t=6O9DI1ZK7so7rrQW-0) you must sign up and log in so you can have access to the colors, fonts, margins and assets information.
+2. Develop the interface as close as possible to the mockup.
+3. Implement project theme provider, component rules, props and make it able to interact with external data.
+4. Test a piece of the codebase. You can choose which part and functions to test.
+
+## Delivery Instructions
+
+- Make a private git repo, and give us access to the same.
+- Send a video using [Loom](https://www.loom.com/) (free to install) answering the proposed questions, explaining your decisions and presenting the code structure.
+
+## Timeline
+
+The scope of this project is designed to be finished in under 6 hours. We’d appreciate if you deliver within a few days of receiving this assignment. 
+
+## What happens after this?
+
+Once you submit the project over email, please give us 2-3 days to review and get back to you! 
+
+If you qualify, we’ll do a quick call to go over specifics like salary, start date, and anything else you’d want to discuss before working together 🙂
+
+We’re looking forward to your submission!
