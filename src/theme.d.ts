@@ -11,6 +11,13 @@ declare module '@mui/material/styles' {
       cleanWhite: string
       sideBarPadding: string
       sideBarGap: string
+      kanbanCardV1: {
+        width: string
+        padding: string
+        borderRadius: string
+        gap: string
+        innerGap: string
+      }
       sideBarWidth: {
         xs: string
         sm: string
@@ -28,6 +35,13 @@ declare module '@mui/material/styles' {
       cleanWhite: string
       sideBarPadding: string
       sideBarGap: string
+      kanbanCardV1: {
+        width: string
+        padding: string
+        borderRadius: string
+        gap: string
+        innerGap: string
+      }
       sideBarWidth: {
         xs: string
         sm: string

@@ -25,8 +25,9 @@ import Chip from '@mui/joy/Chip'
 import CutomModal from '../CutomModal'
 
 const StyledKanbanCard = styled(Card)(({ theme }) => ({
-  borderRadius: '12px',
+  borderRadius: theme.saral.kanbanCardV1.borderRadius,
   color: theme.saral.cleanWhite,
+  padding: theme.saral.kanbanCardV1.padding,
   position: 'relative',
   backgroundColor: 'grab',
   boxShadow: 'rgba(0, 0, 0, 0.2) 0px 2px 1px -1px, rgba(0, 0, 0, 0.14) 0px 1px 1px 0px, rgba(0, 0, 0, 0.12) 0px 1px 3px 0px',
@@ -72,11 +73,11 @@ const KanbanCardVariant1 = ({ cardData, handleDrag, removeCard }: VariantOneProp
 
   return (
     <>
-      <StyledKanbanCard sx={{ width: 320, background: theme.saral.cleanWhite }}
+      <StyledKanbanCard sx={{ width: theme.saral.kanbanCardV1.width, background: theme.saral.cleanWhite }}
         draggable="true"
         onDragStart={(event: React.DragEvent<HTMLElement>) => { handleDrag(event, cardData) }}
       >
-        <div>
+        <div style={{ gap: theme.saral.kanbanCardV1.gap }}>
           <Textarea name={`${cardData.userId}`}
             placeholder="Type in here…"
             variant={editClicked ? 'soft' : 'outlined'}
@@ -89,7 +90,7 @@ const KanbanCardVariant1 = ({ cardData, handleDrag, removeCard }: VariantOneProp
             style={{
               display: 'flex',
               flexDirection: 'row',
-              gap: '10px',
+              gap: theme.saral.kanbanCardV1.innerGap,
               marginTop: '1vh'
             }}
           >

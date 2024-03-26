@@ -8,6 +8,13 @@ const theme = createTheme({
     cleanWhite: '#FFFFFF',
     sideBarPadding: '24px 24px 16px 24px',
     sideBarGap: '32px',
+    kanbanCardV1: {
+      width: '320px',
+      padding: '20px',
+      borderRadius: '8px',
+      gap: '16px',
+      innerGap: '6px'
+    },
     sideBarWidth: {
       xs: '240px',
       sm: '320px',
