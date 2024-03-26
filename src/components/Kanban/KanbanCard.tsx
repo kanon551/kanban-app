@@ -17,9 +17,9 @@ interface KanbanCardProps {
 const KanbanCard = ({ card, handleDragStart, variantID, removeCard }: KanbanCardProps) => {
   return (
     <>
-        <DropIndicator beforeId={card.id} status={card.completed} />
+      <DropIndicator beforeId={card.id} status={card.completed} />
 
-        {/* <motion.div
+      {/* <motion.div
         layout
         layoutId={`${card.id}`}
         draggable="true"
@@ -63,31 +63,31 @@ const KanbanCard = ({ card, handleDragStart, variantID, removeCard }: KanbanCard
                 </StyledCardkanbanActions>
           </StyledKanbanCard>
         </motion.div> */}
-        {
-            variantID === 1 &&
-            <motion.div
-            layout
-            layoutId={`${card.id}`}
-            draggable="true"
-            >
-            <KanbanCardVariant1 cardData={card}
-            removeCard={(cardId: number) => { removeCard(cardId) }}
-            handleDrag={(event: React.DragEvent<HTMLElement>) => { handleDragStart(event, card) }}/>
-            </motion.div>
-
-        }
-        {
-            variantID === 2 &&
-            <motion.div
-            layout
-            layoutId={`${card.id}`}
-            draggable="true"
+      {
+        variantID === 1 &&
+        <motion.div
+          layout
+          layoutId={`${card.id}`}
+          draggable="true"
         >
-            <KanbanCardVariant2 cardData={card}
+          <KanbanCardVariant1 cardData={card}
             removeCard={(cardId: number) => { removeCard(cardId) }}
-            handleDrag={(event: React.DragEvent<HTMLElement>) => { handleDragStart(event, card) }}/>
+            handleDrag={(event: React.DragEvent<HTMLElement>) => { handleDragStart(event, card) }} />
         </motion.div>
-        }
+
+      }
+      {
+        variantID === 2 &&
+        <motion.div
+          layout
+          layoutId={`${card.id}`}
+          draggable="true"
+        >
+          <KanbanCardVariant2 cardData={card}
+            removeCard={(cardId: number) => { removeCard(cardId) }}
+            handleDrag={(event: React.DragEvent<HTMLElement>) => { handleDragStart(event, card) }} />
+        </motion.div>
+      }
 
     </>
 

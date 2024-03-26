@@ -16,27 +16,27 @@ interface ModalProps {
 const CutomModal = ({ open, setOpen }: ModalProps) => {
   return (
     <React.Fragment>
-    <Modal open={open} onClose={() => { setOpen(false, 'NO') }}>
-      <ModalDialog variant="outlined" role="alertdialog">
-        <DialogTitle>
-          <WarningRoundedIcon />
-          Confirmation
-        </DialogTitle>
-        <Divider />
-        <DialogContent>
-          Are you sure you want to discard all of your notes?
-        </DialogContent>
-        <DialogActions>
-          <Button variant="solid" color="danger" onClick={() => { setOpen(false, 'OK') }}>
-            Discard notes
-          </Button>
-          <Button variant="plain" color="neutral" onClick={() => { setOpen(false, 'NO') }}>
-            Cancel
-          </Button>
-        </DialogActions>
-      </ModalDialog>
-    </Modal>
-  </React.Fragment>
+      <Modal open={open} onClose={() => { setOpen(false, 'NO') }}>
+        <ModalDialog variant="outlined" role="alertdialog">
+          <DialogTitle>
+            <WarningRoundedIcon />
+            Confirmation
+          </DialogTitle>
+          <Divider />
+          <DialogContent>
+            Are you sure you want to discard all of your notes?
+          </DialogContent>
+          <DialogActions>
+            <Button variant="solid" color="danger" onClick={() => { setOpen(false, 'OK') }}>
+              Discard notes
+            </Button>
+            <Button variant="plain" color="neutral" onClick={() => { setOpen(false, 'NO') }}>
+              Cancel
+            </Button>
+          </DialogActions>
+        </ModalDialog>
+      </Modal>
+    </React.Fragment>
   )
 }
 

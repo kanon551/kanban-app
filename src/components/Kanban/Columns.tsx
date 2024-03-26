@@ -180,7 +180,7 @@ const Columns = ({ title, column, cards, adjustCards, addCard, updateCard, remov
         onDragLeave={handleDragLeave}
         active={active ? 'true' : 'false'}
         theme={theme}
-        >
+      >
         {
           cards.length === 0
             ? <CustomSkeleton />

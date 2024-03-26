@@ -18,16 +18,9 @@ const StyledDropIndicator = styled('div')({
 })
 
 const DropIndicator = ({ beforeId, status }: DropIndicatorProps) => {
-//   return (
-//         <div
-//           data-before={ beforeId < 1 ? `${beforeId}` : '-1'}
-//           data-column={status ? 'Complete' : 'In-Complete'}
-//           className="my-0.5 h-0.5 w-full bg-violet-400 opacity-0"
-//         />
-//   )
-  return <StyledDropIndicator data-before={ beforeId < 1 ? `${beforeId}` : '-1'}
-            data-column={status ? 'Complete' : 'In-Complete'}
-    />
+  return <StyledDropIndicator data-before={beforeId < 1 ? `${beforeId}` : '-1'}
+    data-column={status ? 'Complete' : 'In-Complete'}
+  />
 }
 
 export default DropIndicator

@@ -97,15 +97,15 @@ export default function Sidebar ({ config }: SidebarProps) {
       />
       <Box sx={{ display: 'flex', gap: 1, alignItems: 'center', justifyContent: 'flex-start' }}>
         <IconButton variant="soft" color="primary" size="sm" sx={{ background: 'none' }}>
-        <ImageWrapper>
-          <CardImage src='https://media.licdn.com/dms/image/C4E0BAQHVx_k4khHmEQ/company-logo_200_200/0/1646921641892/getsaral_logo?e=1719446400&v=beta&t=cwKYWhpeuv8030_V0OXPU40pU5tE_cukxHOo9RVwj9A' alt="img" draggable="false" />
-        </ImageWrapper>
+          <ImageWrapper>
+            <CardImage src='https://media.licdn.com/dms/image/C4E0BAQHVx_k4khHmEQ/company-logo_200_200/0/1646921641892/getsaral_logo?e=1719446400&v=beta&t=cwKYWhpeuv8030_V0OXPU40pU5tE_cukxHOo9RVwj9A' alt="img" draggable="false" />
+          </ImageWrapper>
         </IconButton>
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
-        <Typography level="title-lg" sx={{ textTransform: 'uppercase' }}>Saral</Typography>
-        <Typography level="body-xs" sx={{ ml: 1, textTransform: 'capitalize' }}>
-        - The Influencer OS
-        </Typography>
+          <Typography level="title-lg" sx={{ textTransform: 'uppercase' }}>Saral</Typography>
+          <Typography level="body-xs" sx={{ ml: 1, textTransform: 'capitalize' }}>
+            - The Influencer OS
+          </Typography>
         </div>
       </Box>
 
@@ -135,23 +135,23 @@ export default function Sidebar ({ config }: SidebarProps) {
 
               return (
                 <ListItem key={item.id}>
-                <ListItemButton onClick={() => { navigate(`${item.url}`) }}
-                sx={{
-                  background: breadcrumbs === `${item.url}` ? theme.saral.mainScreenbackgroundColor : null
-                }}
-                >
-                  <SelectedIcon />
-                  <ListItemContent>
-                    <Typography level="title-sm">{item.label}</Typography>
-                  </ListItemContent>
-                  {
-                    (item.chipValue != null) &&
-                    <Chip size="sm" color="primary" variant="solid">
-                      {item.chipValue}
-                    </Chip>
-                  }
-                </ListItemButton>
-              </ListItem>
+                  <ListItemButton onClick={() => { navigate(`${item.url}`) }}
+                    sx={{
+                      background: breadcrumbs === `${item.url}` ? theme.saral.mainScreenbackgroundColor : null
+                    }}
+                  >
+                    <SelectedIcon />
+                    <ListItemContent>
+                      <Typography level="title-sm">{item.label}</Typography>
+                    </ListItemContent>
+                    {
+                      (item.chipValue != null) &&
+                      <Chip size="sm" color="primary" variant="solid">
+                        {item.chipValue}
+                      </Chip>
+                    }
+                  </ListItemButton>
+                </ListItem>
               )
             }
 
